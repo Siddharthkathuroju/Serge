@@ -21,10 +21,11 @@ export async function POST(req: NextRequest) {
 
     // Return the complete Django response
     return NextResponse.json(data);
-  } catch (error: any) {
+  } catch (error) {
     console.error("Upload error:", error);
+    const message = error instanceof Error ? error.message : 'Compression failed';
     return NextResponse.json(
-      { error: error.message || "Upload failed" },
+      { error: message || "Upload failed" },
       { status: 500 }
     );
   }

@@ -18,8 +18,10 @@ export async function POST(
     }
 
     return NextResponse.json(data);
-  } catch (error: any) {
+  } catch (error) {
     console.error('Compression error:', error);
-    return NextResponse.json({ error: error.message || 'Compression failed' }, { status: 500 });
+    // Type guard for error.message
+    const message = error instanceof Error ? error.message : 'Compression failed';
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }

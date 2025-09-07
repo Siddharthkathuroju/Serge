@@ -22,10 +22,11 @@ export async function GET(
 
     // Return the complete Django response
     return NextResponse.json(data);
-  } catch (error: any) {
+  } catch (error) {
     console.error("Details fetch error:", error);
+    const message = error instanceof Error ? error.message : 'Compression failed';
     return NextResponse.json(
-      { error: error.message || "Details fetch failed" },
+      { error: message || "Details fetch failed" },
       { status: 500 }
     );
   }

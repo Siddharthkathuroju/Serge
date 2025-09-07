@@ -22,10 +22,11 @@ export async function GET(
 
     // Return the complete Django response
     return NextResponse.json(data);
-  } catch (error: any) {
+  } catch (error) {
     console.error("Status check error:", error);
+    const message = error instanceof Error ? error.message : 'failed';
     return NextResponse.json(
-      { error: error.message || "Status check failed" },
+      { error: message || "Status check failed" },
       { status: 500 }
     );
   }

@@ -16,8 +16,9 @@ export async function GET(
     }
 
     return NextResponse.json(data);
-  } catch (error: any) {
+  } catch (error) {
     console.error('Compression status error:', error);
-    return NextResponse.json({ error: error.message || 'Failed to get compression status' }, { status: 500 });
+    const message = error instanceof Error ? error.message : 'Compression failed';
+    return NextResponse.json({ error: message || 'Failed to get compression status' }, { status: 500 });
   }
 }
