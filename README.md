@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+SERGE
+VQGAN Compression & Image Captioning App
 
-## Getting Started:
+This project is a full-stack AI-powered application built using Next.js (frontend) and Django (backend). It combines state-of-the-art deep learning models for image compression and image-to-text captioning, making it a powerful demo of computer vision + NLP integration.
 
-First, run the development server:
+✨ Features
+🔹 1. Image Compression with VQ-VAE + GAN
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Implements Vector Quantized Variational Autoencoder (VQ-VAE) with GAN-based adversarial training.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Achieves high-quality compression while preserving visual details.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Trained and optimized with regularization + hyperparameter tuning.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Users can upload an image → compressed representation → reconstructed output.
 
-## Learn More
+🔹 2. Image Captioning with BLIP
 
-To learn more about Next.js, take a look at the following resources:
+Uses a BLIP (Bootstrapping Language-Image Pretraining)-style model for image-to-text generation.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Upload an image → AI generates a meaningful caption/description.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Supports vision encoder + transformer-based decoder.
 
-## Deploy on Vercel
+🔹 3. Fullstack Web App
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Frontend: Next.js (React + Tailwind CSS)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Backend: Django REST Framework (API for ML inference)
+
+
+Extensible to plug in more ML models.
+
+📂 Tech Stack
+
+Frontend: Next.js, React, TailwindCSS
+
+Backend: Django, Django REST Framework
+
+ML/DL Frameworks: PyTorch, Transformers
+
+
+
+
+
+3️⃣ Access the App
+
+Frontend (Next.js): http://localhost:3000
+
+Backend (Django): http://localhost:8000
